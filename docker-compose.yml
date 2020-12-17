@@ -2,12 +2,25 @@ version: "3"
 services: 
   node-app-uno:
     container_name: hw-uno
-    image: albertcontra/app-node-prueba:v0.1.0
+    image: albertcontra/app-node-prueba:v0.2.0
+    depends_on: 
+     - mongodb-server
     ports: 
       - "3010:3010"
       
   node-app-dos:
     container_name: hw-dos
-    image: albertcontra/app-node-prueba:v0.1.0
+    image: albertcontra/app-node-prueba:v0.2.0
+    depends_on: 
+     - mongodb-server
     ports: 
       - "3020:3010"
+
+  mongodb-server:
+    container_name: hw-mongo
+    hostname: hwMongo
+    image: mongo
+    restart: always
+    environment: 
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password

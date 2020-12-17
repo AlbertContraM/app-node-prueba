@@ -53,8 +53,8 @@ app.listen(env.PORT, () => {
         // Conectar con la base de datos, la funcion recive el string de conexion
         await mongoose.connect(env.DB_URI, {
             dbName: env.DB_DATABASE, // Base de datos
-            // user: '', 
-            // pass: '',
+            user: env.DB_USER, 
+            pass: env.DB_PASSWORD,
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false
