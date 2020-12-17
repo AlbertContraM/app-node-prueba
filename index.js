@@ -1,4 +1,3 @@
-const env = require('./env');
 const mongoose = require('mongoose');
 const express = require('express');
 const models = require('./model')
@@ -43,24 +42,24 @@ app.get('/new', async (req,res) => {
 
 
 
-app.listen(env.PORT, () => {
-    console.log(`Example app listening at http://localhost:${env.PORT}`)
+app.listen(process.env.PORT, () => {
+    console.log(`Example app listening at http://localhost:${process.env.PORT}`)
 });
 
 (async () => {
     try {
 
         // Conectar con la base de datos, la funcion recive el string de conexion
-        await mongoose.connect(env.DB_URI, {
-            dbName: env.DB_DATABASE, // Base de datos
-            user: env.DB_USER, 
-            pass: env.DB_PASSWORD,
+        await mongoose.connect(process.env.DB_URI, {
+            dbName: process.env.DB_DATABASE, // Base de datos
+            user: process.env.DB_USER, 
+            pass: process.env.DB_PASSWORD,
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false
         });
 
-        console.log('Mongoose is conected at DB ' + env.DB_DATABASE );
+        console.log('Mongoose is conected at DB ' + process.env.DB_DATABASE );
         
 
     } catch (error) {
