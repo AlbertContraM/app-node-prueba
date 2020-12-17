@@ -1,0 +1,13 @@
+version: "3"
+services: 
+  node-app-uno:
+    container_name: hw-uno
+    image: albertcontra/app-node-prueba:v0.1.0
+    ports: 
+      - "3010:3010"
+      
+  node-app-dos:
+    container_name: hw-dos
+    image: albertcontra/app-node-prueba:v0.1.0
+    ports: 
+      - "3020:3010"

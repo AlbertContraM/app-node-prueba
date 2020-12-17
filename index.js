@@ -20,8 +20,6 @@ app.get('/all', async (req,res) => {
     // Find all the users
     const users = await models.UserModel.find();
 
-    console.log(users);
-
     res.json({
         status: 'Users find',
         users,
