@@ -25,6 +25,12 @@ services:
     hostname: hwMongo
     image: mongo:4.4-bionic
     restart: always
+    volumes: 
+      - hw-mongo-data:/data/db
     environment: 
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: password
+
+# Volumes used in any container
+volumes: 
+  hw-mongo-data:
