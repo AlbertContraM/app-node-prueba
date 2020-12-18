@@ -28,8 +28,8 @@ services:
     volumes: 
       - hw-mongo-data:/data/db
     environment: 
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
 
 # Volumes used in any container
 volumes: 
